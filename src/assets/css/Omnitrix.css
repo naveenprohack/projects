@@ -1,0 +1,123 @@
+.omnitrix-wrapper {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.omnitrix-core {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  /* background: radial-gradient(circle, #020f08 30%, black 70%); */
+  position: relative;
+  box-shadow: inset 0 0 45px #00ff88, 0 0 35px #00ff88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: radial-gradient(circle, #062a18 40%, #000 100%);
+  box-shadow:
+    inset 0 0 22px #00ff99,
+    inset 0 0 50px rgba(0, 255, 150, 0.6),
+    0 12px 25px rgba(0, 0, 0, 0.7),
+    0 32px 55px rgba(0, 0, 0, 0.9);
+}
+
+/* glowing center X */
+.omnitrix-center {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, #00ff88 0%, #008f55 80%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ff88, inset 0 0 30px #00ff88;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); filter: brightness(100%); }
+  50% { transform: scale(1.08); filter: brightness(160%); }
+  100% { transform: scale(1); filter: brightness(100%); }
+}
+
+
+/* rotating ring */
+.omnitrix-outer-ring {
+  width: 295px;
+  height: 295px;
+  border-radius: 50%;
+  position: absolute;
+  top: -15%;
+  left: -15%;
+  transform: translate(-50%, -50%);
+  border: 14px solid #1a1a1a;
+  background: linear-gradient(145deg, #2b2b2b, #0b0b0b);
+  box-shadow:
+    inset 0 0 12px #00ff99,
+    0 8px 18px rgba(0, 0, 0, 0.8),
+    0 18px 32px rgba(0, 0, 0, 0.9);
+  transition: transform 0.5s cubic-bezier(.21,1.03,.87,1.04);
+
+}
+
+/* rotating hologram dotted outline */
+.energy-pulse {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 5px dashed #00ff88;
+  position: absolute;
+  animation: energy-spin 10s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes energy-spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* claws */
+.claws {
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  position: absolute;
+  border: 18px solid #1b1b1b;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: claws-open 0.6s forwards;
+}
+
+@keyframes claws-open {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(45deg); }
+}
+
+/* menu buttons */
+.omni-button {
+  position: absolute;
+  width: 95px;
+  height: 42px;
+  background: #00ff88;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px #00ff88;
+  transition: 0.3s;
+}
+
+.omni-button:hover {
+  transform: scale(1.25);
+  filter: brightness(180%);
+}
+
+/* button positions around circle */
+.pos-1 { top: -15px; left: 50%; transform: translateX(-50%); }
+.pos-2 { right: -15px; top: 50%; transform: translateY(-50%); }
+.pos-3 { bottom: -15px; left: 50%; transform: translateX(-50%); }
+.pos-4 { left: -15px; top: 50%; transform: translateY(-50%); }
